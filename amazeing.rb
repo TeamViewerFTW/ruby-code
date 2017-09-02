@@ -2,7 +2,7 @@
 # A maze.
 # Run with ruby amazeing.rb
 
-require gosu
+require 'gosu'
 class Amazing < Gosu::Window
   def initialize
     super(640, 640)
