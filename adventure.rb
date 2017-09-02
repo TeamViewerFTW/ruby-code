@@ -24,6 +24,38 @@ while damage_points > 0 and not escaped do
     actions << "f - fight"
   end
   print "What do you do? (#{actions.join(', ')}): "
+  player_action = gets.chomp
+  if monster and monster_attack?
+    damage_points = damage_points - 1
+    puts "OUCH, the monster bit you!"
+  end
+  if player_action == "m"
+    current_room = create_room
+    number_of_rooms_explored = number_of_rooms_explored + 1
+    monster = has_monster?
+    escaped = has_escaped?
+  elsif player_action == "s"
+    if has_treasure?
+      puts "You found #{treasure}!"
+    else
+      puts "You look, but don't find anything."
+    end
+    # when you look for something,
+    # you might attract another monster!
+    if not monster
+      monster = has_monster?
+    end
+  elsif player_action == "f"
+    if defeat_monster?
+      monster = false
+      puts "You defeated the scary monster!"
+    else
+      puts "You attack and MISS!"
+    end
+  else
+    puts "I don't know how to do that!"
+  end
+  puts ""
 end
 
 if damage_points > 0
