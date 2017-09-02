@@ -4,7 +4,7 @@
 # Adventure game.
 
 def create_room
-  "You are in a room, there is an exit on the wall."
+  "You are in a #{size} #{color} #{room_type}. There is an exit on the #{direction} wall."
 end
 
 def has_monster?
@@ -13,6 +13,22 @@ def has_monster?
   else
     false
   end
+end
+
+def size
+  ["huge", "large", "big", "regular", "small", "tiny"].sample
+end
+
+def color
+  ["red", "blue", "green", "dark", "golden", "crystal"].sample
+end
+
+def room_type
+  ["cave", "treasure room", "rock cavern", "tomb", "guard room", "lair"].sample
+end
+
+def direction
+  ["north", "south", "east", "west"].sample
 end
 
 def roll_dice(number_of_dice, size_of_dice)
