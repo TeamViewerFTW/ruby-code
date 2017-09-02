@@ -3,13 +3,23 @@
 # Run with ruby amazeing.rb
 
 require 'gosu'
+require_relative 'game'
 class Amazing < Gosu::Window
   def initialize
     super(640, 640)
     self.caption = "Amazing"
-    # More code will go here
+    @game - Game.new(self)
+
   end
-  # Even more code will go here
+  def update
+    @game.update
+  end
+  def draw
+    @game.draw
+  end
+  def button_down(id)
+    @game.button_down(id)
+  end
 end
 
 window = Amazing.new
