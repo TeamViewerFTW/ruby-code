@@ -31,6 +31,34 @@ def has_escaped?
   end
 end
 
+def monster_attack?
+  if roll_dice(2, 6) >= 9
+    true
+  else
+    false
+  end
+end
+
+def defeat_monster?
+  if roll_dice(2, 6) >= 4
+    true
+  else
+    false
+  end
+end
+
+def has_treasure?
+  if roll_dice(2, 6) >= 8
+    true
+  else
+    false
+  end
+end
+
+def treasure
+  ["gold coins", "gems", "a magic wand", "an enchanted sword"].sample
+end
+
 number_of_rooms_explored = 1
 treasure_count = 0
 damage_points = 5
