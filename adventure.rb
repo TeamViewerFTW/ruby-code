@@ -6,6 +6,31 @@
 def create_room
   "You are in a room, there is an exit on the wall."
 end
+
+def has_monster?
+  if roll_dice(2, 6) >= 8
+    true
+  else
+    false
+  end
+end
+
+def roll_dice(number_of_dice, size_of_dice)
+  total = 0
+  1.upto(number_of_dice) do
+    total = total + rand(size_of_dice) + 1
+  end
+  return total
+end
+
+def has_escaped?
+  if roll_dice(2, 6) >= 11
+    true
+  else
+    false
+  end
+end
+
 number_of_rooms_explored = 1
 treasure_count = 0
 damage_points = 5
