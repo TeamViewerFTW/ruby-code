@@ -16,7 +16,14 @@ puts "To play, type one of the command choices on each turn."
 puts ""
 
 while damage_points > 0 and not escaped do
-  # Game code will go here
+  actions = ["m - move", "s - search"]
+  puts "Room number #{number_of_rooms_explored}"
+  puts current_room
+  if monster
+    puts "Oh no! An evil monster is in here with you!"
+    actions << "f - fight"
+  end
+  print "What do you do? (#{actions.join(', ')}): "
 end
 
 if damage_points > 0
