@@ -3,12 +3,15 @@
 # Original Project from Ruby For Kids
 # Adventure game.
 
+def create_room
+  "You are in a room, there is an exit on the wall."
+end
 number_of_rooms_explored = 1
 treasure_count = 0
 damage_points = 5
 escaped = false
 monster = false
-current_room = ""
+current_room = create_room
 
 puts "You are trapped in the dungeon. Collect treasure and try to escape"
 puts "before an evil monster gets you!"
